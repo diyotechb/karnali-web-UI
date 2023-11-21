@@ -8,13 +8,10 @@ import { BusinessService } from 'src/app/services/business.service';
 })
 
 export class HomeComponent implements OnInit {
-  businesses: any[] = [];
 
-  constructor(private businessService: BusinessService) { }
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.businessService.getBusinesses().subscribe((data) => {
-        this.businesses = data;
-      });
   }
 }

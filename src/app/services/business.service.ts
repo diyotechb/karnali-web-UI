@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 
 export class BusinessService {
-  private apiUrl = environment.apiURL;
+  private apiUrl = environment.localURL;
 
   constructor(private http: HttpClient) {}
 
