@@ -1,4 +1,14 @@
 
+<mat-form-field appearance="fill" style="margin-top: 20px;">
+  <label>Search Business</label>
+  <input
+    matInput
+    [(ngModel)]="searchTerm"
+    (input)="applyFilter()"
+    placeholder="Search"
+  />
+</mat-form-field>
+
 <div *ngFor="let business of businesses">
     <div class="business-card">
       <h3>{{ business.name }}</h3>

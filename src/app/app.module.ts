@@ -9,24 +9,35 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { BusinessComponent } from './components/business/business.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './components/auth/login/login.component';
+import { SignupComponent } from './components/auth/signup/signup.component';
+import { MatCardModule } from '@angular/material/card'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     BusinessComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatToolbarModule // Add this line to import the MatToolbarModule
+    MatToolbarModule, // Add this line to import the MatToolbarModule
+    MatInputModule,
+    MatCardModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]

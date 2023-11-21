@@ -4,6 +4,6 @@
     <button mat-button routerLink="/home">Home</button>
     <button mat-button routerLink="/services">Services</button>
     <button mat-button routerLink="/about">About</button>
-    <button mat-button (click)="toggleLogin()">{{ isLoggedIn ? 'Logout' : 'Login' }}</button>
-    <button *ngIf="!isLoggedIn" mat-button (click)="signUp()">Sign up</button>
+    <button mat-button routerLink="/login">{{ isLoggedIn ? 'Logout' : 'Login' }}</button>
+    <button *ngIf="!isLoggedIn" mat-button routerLink="/signup">Sign up</button>
   </mat-toolbar>
