@@ -11,4 +11,8 @@ export class NavbarComponent {
   toggleLogin() {
     this.isLoggedIn = !this.isLoggedIn;
   }
+
+  signUp(){
+    
+  }
 }

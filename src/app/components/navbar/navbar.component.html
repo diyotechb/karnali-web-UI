@@ -1,8 +1,9 @@
-<mat-toolbar color="primary">
-    <span><a routerLink="/home">Brand Name</a></span>
+<mat-toolbar color="secondary">
+    <span><a routerLink="/home">Karnali</a></span>
     <span class="spacer"></span>
     <button mat-button routerLink="/home">Home</button>
     <button mat-button routerLink="/services">Services</button>
     <button mat-button routerLink="/about">About</button>
     <button mat-button (click)="toggleLogin()">{{ isLoggedIn ? 'Logout' : 'Login' }}</button>
+    <button *ngIf="!isLoggedIn" mat-button (click)="signUp()">Sign up</button>
   </mat-toolbar>
