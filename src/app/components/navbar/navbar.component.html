@@ -1,9 +1,11 @@
-<mat-toolbar color="secondary">
-    <span><a routerLink="/home">Karnali</a></span>
-    <span class="spacer"></span>
-    <button mat-button routerLink="/home">Home</button>
-    <button mat-button routerLink="/services">Services</button>
-    <button mat-button routerLink="/about">About</button>
-    <button mat-button routerLink="/login">{{ isLoggedIn ? 'Logout' : 'Login' }}</button>
-    <button *ngIf="!isLoggedIn" mat-button routerLink="/signup">Sign up</button>
+<mat-toolbar color="primary" class="mat-elevation-z8">
+    <span><mat-icon></mat-icon> KARNALI</span>
+    <div class="spacer"></div>
+    <a mat-button  routerLink=""> Home</a>
+    <a mat-button routerLink="business"> Business</a>
+    <a mat-button  routerLink="services"> services</a>
+
+    <a *ngIf="isLoggedIn" color="warn"  class="button-spacing"> Logout</a>
+    <a *ngIf="!isLoggedIn" mat-raised-button color="warn" routerLink="signup"  class="button-spacing"> Signup</a>
+    <a *ngIf="!isLoggedIn" mat-raised-button color="warn" routerLink="login"  class="button-spacing"> Login</a>
   </mat-toolbar>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, filter, takeUntil, take } from 'rxjs';
@@ -10,11 +10,11 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
-  public loginValid = true;
+export class LoginComponent implements OnInit {
 
 
-  loginForm:FormGroup;
+
+  public loginForm!: FormGroup;
 
 
 
@@ -26,13 +26,14 @@ export class LoginComponent {
     private _router: Router,
     private _authService: AuthService
   ) {
-    this.loginForm = this.fb.group({
-      email:['bhanbish@gmail.com', Validators.required],
-      password:['Hello12345%', Validators.required]
-    })
   }
 
-  public ngOnInit(): void {
+  public ngOnInit() {
+
+    this.loginForm = new FormGroup({
+      email: new FormControl('bhanbish@gmail.com', [Validators.required, Validators.email]),
+      password: new FormControl('Hello12345%', [Validators.required, Validators.minLength(8)])
+    })
   
   }
 
@@ -44,7 +45,7 @@ export class LoginComponent {
     console.log("obsubmit", this.loginForm.value)
     this._authService.login(this.loginForm.value).subscribe(
       next => {
-        console.log('login successful', next);
+        this._router.navigate(['/']);
 
       },
       error => {

@@ -1,0 +1,26 @@
+
+<div class="container" style="margin-top: 20px; padding: 20px;">
+    <div  style="margin:auto; display: flex; justify-content: center;">
+      <a  mat-raised-button color="warn" routerLink="register-business"  class="button-spacing"> Register for Business Profile</a>
+    </div>
+    <div class="row" style=" margin-top: 10px; width: 100%; display: flex; justify-content: center;">
+      <mat-form-field appearance="fill" style=" width: 80%;">
+        <label>Search Business</label>
+        <input
+          matInput
+          [(ngModel)]="searchTerm"
+          (input)="applyFilter()"
+          placeholder="Search"
+        />
+      </mat-form-field>
+      
+    </div>
+    <div *ngFor="let business of filteredBusiness">
+        <div class="business-card">
+          <h3>{{ business.name }}</h3>
+          <p>{{ business.address.street }}, {{ business.address.city }}, {{ business.address.state }}</p>
+          <p>Type: {{ business.businessType.type }}</p>
+        </div>
+    </div>
+      
+    </div>

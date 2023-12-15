@@ -5,9 +5,23 @@
     
     <mat-card-content>
       <div class="header">
-        <h2>LOGIN</h2>
+        <h2>REGISTER</h2>
       </div>
-      <form class="example-form" [formGroup] ="loginForm" (ngSubmit)="onSubmit()" name="loginForm">
+      <form class="example-form" [formGroup] ="registerBusinessForm" (ngSubmit)="onSubmit()" name="loginForm">
+        <div class="email-input">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>First Name</mat-label>
+          <input matInput placeholder="firstName"  formControlName="firstName" required> 
+          </mat-form-field>
+      </div>
+  
+      <div class="email-input">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Last Name</mat-label>
+        <input matInput placeholder="lastName"  formControlName="lastName" required> 
+        </mat-form-field>
+    </div>
+  
         <div class="email-input">
               <mat-form-field class="full-width" appearance="outline">
                 <mat-label>Email</mat-label>
@@ -17,26 +31,29 @@
               </mat-error> -->
               </mat-form-field>
           </div>
-
+  
+          <div class="email-input">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>userName</mat-label>
+            <input matInput placeholder="userName"  formControlName="userName" required> 
+            </mat-form-field>
+        </div>
+      
+  
           <div>
             <span class="aLink">Forgot Password</span>
             <mat-form-field class="full-width" appearance="outline">
               <mat-label>Password</mat-label>
               <input matInput placeholder="Password" type="password" formControlName="password" required>
              
-
+  
               <!-- <mat-error *ngIf="loginForm.get('password').errors?.required">
                 Password Required
                 </mat-error> -->
                 </mat-form-field>
           </div>
-
+  
           <button mat-flat-button color="primary" type="submit"> Login</button>
           </form>
-        <!-- <mat-card-actions>
-          <button mat-raised-button type="submit" color="primary">Login</button>
-        </mat-card-actions>
-      </form> -->
-      <!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->
     </mat-card-content>
   </mat-card>
